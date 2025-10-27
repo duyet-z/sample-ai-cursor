@@ -1,0 +1,6 @@
+redmine:
+  base_url: <%= ENV['REDMINE_BASE_URL'] %>
+  api_key: <%= ENV['REDMINE_API_KEY'] %>
+  basic_auth:
+    username: <%= ENV['REDMINE_BASIC_AUTH_USERNAME'] %>
+    password: <%= ENV['REDMINE_BASIC_AUTH_PASSWORD'] %>

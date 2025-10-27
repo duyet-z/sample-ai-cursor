@@ -25,6 +25,10 @@ services:
     environment:
       DATABASE_URL: mysql2://rails_user:password@db:3306/sample_prompt_ai_cursor_development
       RAILS_ENV: development
+      REDMINE_BASE_URL: ${REDMINE_BASE_URL}
+      REDMINE_API_KEY: ${REDMINE_API_KEY}
+      REDMINE_BASIC_AUTH_USERNAME: ${REDMINE_BASIC_AUTH_USERNAME}
+      REDMINE_BASIC_AUTH_PASSWORD: ${REDMINE_BASIC_AUTH_PASSWORD}
     stdin_open: true
     tty: true
 
