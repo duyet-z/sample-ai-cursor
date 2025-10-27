@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: slack_collect_msg_development
+  database: sample_prompt_ai_cursor_development
   host: <%= ENV.fetch("DB_HOST") { "db" } %>
   username: <%= ENV.fetch("DB_USER") { "rails_user" } %>
   password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
@@ -29,7 +29,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: slack_collect_msg_test
+  database: sample_prompt_ai_cursor_test
   host: <%= ENV.fetch("TEST_DB_HOST") { "127.0.0.1" } %>
   username: <%= ENV.fetch("DB_USER") { "root" } %>
   password: <%= ENV.fetch("DB_PASSWORD") { "" } %>
@@ -58,18 +58,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: slack_collect_msg_production
-    username: slack_collect_msg
-    password: <%= ENV["SLACK_COLLECT_MSG_DATABASE_PASSWORD"] %>
+    database: sample_prompt_ai_cursor_production
+    username: sample_prompt_ai_cursor
+    password: <%= ENV["SAMPLE_PROMPT_AI_CURSOR_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: slack_collect_msg_production_cache
+    database: sample_prompt_ai_cursor_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: slack_collect_msg_production_queue
+    database: sample_prompt_ai_cursor_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: slack_collect_msg_production_cable
+    database: sample_prompt_ai_cursor_production_cable
     migrations_paths: db/cable_migrate

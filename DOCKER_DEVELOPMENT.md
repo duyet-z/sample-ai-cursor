@@ -43,11 +43,11 @@ The Docker Compose setup includes:
   - Volume mounted for live code reloading
 - **db**: MySQL 8.0 for development
   - Port: 3306
-  - Database: `slack_collect_msg_development`
+  - Database: `sample_prompt_ai_cursor_development`
   - User: `rails_user` / Password: `password`
 - **test_db**: MySQL 8.0 for testing
   - Port: 3307
-  - Database: `slack_collect_msg_test`
+  - Database: `sample_prompt_ai_cursor_test`
 
 ## Environment Variables
 
@@ -80,11 +80,11 @@ To access the MySQL database directly:
 
 ```bash
 # From host machine
-mysql -h 127.0.0.1 -P 3306 -u rails_user -p slack_collect_msg_development
+mysql -h 127.0.0.1 -P 3306 -u rails_user -p sample_prompt_ai_cursor_development
 
 # From within the web container
 ./docker-dev.sh bash
-mysql -h db -u rails_user -p slack_collect_msg_development
+mysql -h db -u rails_user -p sample_prompt_ai_cursor_development
 ```
 
 ## Troubleshooting

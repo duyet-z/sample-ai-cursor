@@ -4,11 +4,9 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: slack_collect_msg_development
+      MYSQL_DATABASE: sample_prompt_ai_cursor_development
       MYSQL_USER: rails_user
       MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./db/init:/docker-entrypoint-initdb.d
@@ -25,7 +23,7 @@ services:
       - .:/app
       - bundle_cache:/usr/local/bundle
     environment:
-      DATABASE_URL: mysql2://rails_user:password@db:3306/slack_collect_msg_development
+      DATABASE_URL: mysql2://rails_user:password@db:3306/sample_prompt_ai_cursor_development
       RAILS_ENV: development
     stdin_open: true
     tty: true
@@ -34,9 +32,7 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: true
-      MYSQL_DATABASE: slack_collect_msg_test
-    ports:
-      - "3307:3306"
+      MYSQL_DATABASE: sample_prompt_ai_cursor_test
     volumes:
       - test_mysql_data:/var/lib/mysql
 

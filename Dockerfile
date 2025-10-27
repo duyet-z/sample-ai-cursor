@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t slack_collect_msg .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name slack_collect_msg slack_collect_msg
+# docker build -t sample_prompt_ai_cursor .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name sample_prompt_ai_cursor sample_prompt_ai_cursor
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
