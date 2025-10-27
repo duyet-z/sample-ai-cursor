@@ -59,7 +59,7 @@ Config.setup do |config|
 
   # Evaluate ERB in YAML config files at load time.
   #
-  # config.evaluate_erb_in_yaml = true
+  config.evaluate_erb_in_yaml = true
 
   # Name of directory and file to store config keys
   #

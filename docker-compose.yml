@@ -22,6 +22,8 @@ services:
     volumes:
       - .:/app
       - bundle_cache:/usr/local/bundle
+    env_file:
+      - .env
     environment:
       DATABASE_URL: mysql2://rails_user:password@db:3306/sample_prompt_ai_cursor_development
       RAILS_ENV: development
