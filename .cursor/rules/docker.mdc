@@ -1,0 +1,282 @@
+---
+description: Quy tắc bắt buộc cho môi trường Docker - LUÔN chạy commands trong container
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# ⚠️ QUY TẮC QUAN TRỌNG NHẤT
+
+Ứng dụng Rails này đang chạy hoàn toàn trong Docker containers. **TUYỆT ĐỐI KHÔNG** chạy bất kỳ lệnh Rails, Ruby, Bundle, Database, hoặc npm trực tiếp trên host machine.
+
+# 🐳 Cấu trúc Docker Services
+
+## Services đang chạy:
+- **web**: Rails application (port 3000)
+  - Image: Dockerfile.dev (Ruby 3.4.2)
+  - Working directory: /app
+  - Volumes: code sync từ host vào /app
+
+- **db**: MySQL 8.0 database
+  - Database: sample_prompt_ai_cursor_development
+  - User: rails_user
+  - Password: password
+  - Port: 3306
+
+- **test_db**: MySQL 8.0 cho testing
+  - Database: sample_prompt_ai_cursor_test
+
+## Volumes:
+- `.` → `/app` (code sync)
+- `bundle_cache` → `/usr/local/bundle` (gems cache)
+
+# 📋 Commands - LUÔN sử dụng docker compose exec
+
+## Quản lý Containers
+```bash
+# Start tất cả services
+docker compose up -d
+
+# Stop tất cả services
+docker compose down
+
+# Xem logs
+docker compose logs -f web
+docker compose logs -f db
+
+# Rebuild containers (khi thay đổi Dockerfile)
+docker compose build
+docker compose up -d --build
+
+# Restart một service
+docker compose restart web
+docker compose restart db
+
+# Xem status
+docker compose ps
+
+# Xóa tất cả (bao gồm volumes - CẨN THẬN!)
+docker compose down -v
+```
+
+## Bundle / Gems Management
+```bash
+# Install gems (sau khi thêm gem vào Gemfile)
+docker compose exec web bundle install
+
+# Update gems
+docker compose exec web bundle update
+
+# Check gem version
+docker compose exec web bundle list | grep <gem_name>
+
+# Bundle audit
+docker compose exec web bundle exec brakeman
+```
+
+## Rails Commands
+```bash
+# Rails console
+docker compose exec web rails console
+docker compose exec web rails c
+
+# Rails server (thường đã chạy tự động)
+docker compose exec web rails server -b 0.0.0.0
+
+# Generate
+docker compose exec web rails generate model User name:string email:string
+docker compose exec web rails generate controller Users index show
+docker compose exec web rails generate migration AddAgeToUsers age:integer
+
+# Routes
+docker compose exec web rails routes
+docker compose exec web rails routes | grep user
+
+# Rails tasks
+docker compose exec web rails -T
+docker compose exec web rails about
+```
+
+## Database Commands
+```bash
+# Create database
+docker compose exec web rails db:create
+
+# Run migrations
+docker compose exec web rails db:migrate
+
+# Rollback migration
+docker compose exec web rails db:rollback
+docker compose exec web rails db:rollback STEP=2
+
+# Reset database (DROP + CREATE + MIGRATE + SEED)
+docker compose exec web rails db:reset
+
+# Drop database
+docker compose exec web rails db:drop
+
+# Seed data
+docker compose exec web rails db:seed
+
+# Database status
+docker compose exec web rails db:version
+
+# MySQL console
+docker compose exec db mysql -u rails_user -ppassword sample_prompt_ai_cursor_development
+
+# MySQL dump
+docker compose exec db mysqldump -u rails_user -ppassword sample_prompt_ai_cursor_development > backup.sql
+```
+
+## Testing
+```bash
+# Chạy tất cả tests
+docker compose exec web rails test
+
+# Chạy một test file cụ thể
+docker compose exec web rails test test/models/user_test.rb
+
+# Chạy một test method cụ thể (thêm line number)
+docker compose exec web rails test test/models/user_test.rb:10
+
+# Chạy system tests
+docker compose exec web rails test:system
+
+# Chạy tests theo category
+docker compose exec web rails test:models
+docker compose exec web rails test:controllers
+docker compose exec web rails test:integration
+
+# Test với verbose
+docker compose exec web rails test -v
+
+# Rubocop
+docker compose exec web rubocop
+docker compose exec web rubocop -a  # auto-correct
+```
+
+## Assets & Frontend
+```bash
+# Precompile assets (nếu cần)
+docker compose exec web rails assets:precompile
+
+# Clear assets
+docker compose exec web rails assets:clobber
+
+# Importmap commands
+docker compose exec web rails importmap:install
+docker compose exec web rails importmap:audit
+```
+
+## Interactive Shell
+```bash
+# Bash shell trong web container
+docker compose exec web bash
+
+# Bash shell trong db container
+docker compose exec db bash
+
+# IRB
+docker compose exec web irb
+
+# Chạy script Ruby
+docker compose exec web ruby script.rb
+```
+
+## Debugging
+```bash
+# Check container status
+docker compose ps
+
+# Check logs with tail
+docker compose logs --tail=100 web
+
+# Follow logs real-time
+docker compose logs -f web
+
+# Check processes trong container
+docker compose exec web ps aux
+
+# Check disk usage
+docker compose exec web df -h
+
+# Environment variables
+docker compose exec web env
+```
+
+# 🔄 Workflow thông dụng
+
+## Khi thêm gem mới:
+1. Thêm gem vào `Gemfile` (edit trên host machine)
+2. `docker compose exec web bundle install`
+3. `docker compose restart web` (nếu cần)
+
+## Khi tạo migration:
+1. `docker compose exec web rails generate migration CreateUsers`
+2. Edit migration file (trên host machine)
+3. `docker compose exec web rails db:migrate`
+
+## Khi tạo model mới:
+1. `docker compose exec web rails generate model User name:string email:string`
+2. `docker compose exec web rails db:migrate`
+3. Viết tests và code
+
+## Khi gặp lỗi database:
+1. `docker compose exec web rails db:drop`
+2. `docker compose exec web rails db:create`
+3. `docker compose exec web rails db:migrate`
+4. `docker compose exec web rails db:seed`
+
+# ❌ TUYỆT ĐỐI KHÔNG làm
+
+```bash
+# ❌ KHÔNG chạy trực tiếp trên host
+bundle install          # SAI!
+rails console          # SAI!
+rails db:migrate       # SAI!
+rails generate model   # SAI!
+mysql -u root          # SAI!
+
+# ✅ ĐÚNG - Luôn dùng docker compose exec web
+docker compose exec web bundle install
+docker compose exec web rails console
+docker compose exec web rails db:migrate
+docker compose exec web rails generate model User
+docker compose exec db mysql -u rails_user -ppassword
+```
+
+# 📝 Lưu ý quan trọng
+
+1. **Code sync tự động**: Mọi thay đổi file trên host sẽ tự động sync vào container
+2. **Gems cache**: Gems được cache trong volume, không cần install lại khi restart
+3. **Database persistence**: Data trong database được lưu trong volume
+4. **Port mapping**: Rails chạy trên localhost:3000 từ host machine
+5. **Hot reload**: Rails tự động reload code khi file thay đổi (development mode)
+
+# 🐛 Troubleshooting
+
+## Container không start:
+```bash
+docker compose down
+docker compose build
+docker compose up -d
+```
+
+## Database connection error:
+```bash
+# Đợi database ready
+docker compose exec web rails db:create
+```
+
+## Permission errors:
+```bash
+docker compose exec web chmod +x bin/rails
+docker compose exec web chmod +x bin/setup
+```
+
+## Reset toàn bộ:
+```bash
+docker compose down -v  # XÓA cả volumes!
+docker compose build
+docker compose up -d
+docker compose exec web rails db:setup
+```
