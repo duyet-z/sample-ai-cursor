@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  # Redmine issues API endpoints
+  resources :redmine_issues, only: [ :index ] do
+    collection do
+      post :sync              # Sync issues from Redmine API
+      post :update_details    # Update detailed information for all issues
+    end
+  end
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

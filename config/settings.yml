@@ -4,4 +4,9 @@ redmine:
   basic_auth:
     username: <%= ENV['REDMINE_BASIC_AUTH_USERNAME'] %>
     password: <%= ENV['REDMINE_BASIC_AUTH_PASSWORD'] %>
-
+  projects:
+    - minden2
+    - usedcar-ex
+  tracker_id: 12  # User Story tracker
+  default_days: 30
+  max_limit: 100

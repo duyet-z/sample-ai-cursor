@@ -1,0 +1,1049 @@
+{
+  "issues": [
+    {
+      "id": 106651,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 2,
+        "name": "In Progress"
+      },
+      "priority": {
+        "id": 3,
+        "name": "High"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 325,
+        "name": "Tân Nguyễn Phú"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6623 MINDEN-3680　メール鑑定：相談カテゴリが正常に反映されない不具合 ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6623\r\nhttps://2zigexn.backlog.com/view/MINDEN-3680\r\nslack https://ventura-vn.slack.com/archives/CAUNXUB33/p1761278911600539",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3680"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": ""
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-24T11:15:07+07:00",
+      "updated_on": "2025-10-27T08:19:46+07:00"
+    },
+    {
+      "id": 106623,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 2,
+        "name": "In Progress"
+      },
+      "priority": {
+        "id": 4,
+        "name": "Urgent"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 342,
+        "name": "Phuc Nguyen"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6621 自動督促架電日管理画面のデータ非表示調査",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6621\r\n\r\nslack: https://ventura-vn.slack.com/archives/CAUNXUB33/p1761213270617189",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://ventura-vn.slack.com/archives/CAUNXUB33/p1761213270617189"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": ""
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-24T09:08:54+07:00",
+      "updated_on": "2025-10-24T09:40:07+07:00"
+    },
+    {
+      "id": 106602,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 23,
+        "name": "Ready for test"
+      },
+      "priority": {
+        "id": 4,
+        "name": "Urgent"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 318,
+        "name": "Minh Nguyễn Bình"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6620 手相家相画像管理画面の不具合調査 ",
+      "description": "slack: https://ventura-vn.slack.com/archives/CAUNXUB33/p1761212972456929\r\nhttps://github.com/2zigexn/sp.minden.jp_v2/issues/6620",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://ventura-vn.slack.com/archives/CAUNXUB33/p1761212972456929"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6624/"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-24T08:28:43+07:00",
+      "updated_on": "2025-10-27T08:17:03+07:00"
+    },
+    {
+      "id": 106563,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 1,
+        "name": "New"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 305,
+        "name": "Anh Khoa Dinh "
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6619 MINDEN-3678　スパム疑いユーザーの検出および管理システム  ",
+      "description": "https://2zigexn.backlog.com/view/MINDEN-3678\r\nhttps://github.com/2zigexn/sp.minden.jp_v2/issues/6619\r\n\r\n",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3678"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": ""
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": ""
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-23T16:29:13+07:00",
+      "updated_on": "2025-10-23T16:29:13+07:00"
+    },
+    {
+      "id": 106516,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 2,
+        "name": "In Progress"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 402,
+        "name": "Huy Tran Minh"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6618 MINDEN-3669 当日限定クーポン・ポップアップ表示 仕様書：フロント ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6618\r\n\r\nhttps://2zigexn.backlog.com/view/MINDEN-3669",
+      "start_date": "2025-10-23",
+      "due_date": "2025-10-28",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3669"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": ""
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-23T09:50:03+07:00",
+      "updated_on": "2025-10-23T16:49:34+07:00"
+    },
+    {
+      "id": 106467,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 23,
+        "name": "Ready for test"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 318,
+        "name": "Minh Nguyễn Bình"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6613 MINDEN-3676　アプリ：複数の画面を遷移した後、ホーム画面に戻れない不具合  ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6613\r\n\r\nhttps://2zigexn.backlog.com/view/MINDEN-3676",
+      "start_date": "2025-10-23",
+      "due_date": "2025-10-24",
+      "done_ratio": 33,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3676"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/minden-app/pull/451"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-22T13:57:59+07:00",
+      "updated_on": "2025-10-27T10:04:15+07:00"
+    },
+    {
+      "id": 106436,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 20,
+        "name": "Released"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 325,
+        "name": "Tân Nguyễn Phú"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6610 MINDEN-3674 新規LP作成(LP89) ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6610\r\nhttps://2zigexn.backlog.com/view/MINDEN-3674",
+      "start_date": "2025-10-22",
+      "due_date": "2025-10-23",
+      "done_ratio": 83,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3674"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6617"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-22T10:22:08+07:00",
+      "updated_on": "2025-10-27T07:30:34+07:00"
+    },
+    {
+      "id": 106387,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 2,
+        "name": "In Progress"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 402,
+        "name": "Huy Tran Minh"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6600 MINDEN-3671 AI相談機能導入プロジェクトMINDEN-3576のLP内実装  ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6600\r\nhttps://2zigexn.backlog.com/view/MINDEN-3671",
+      "start_date": "2025-10-21",
+      "due_date": "2025-10-23",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3671"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6615"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-21T16:06:06+07:00",
+      "updated_on": "2025-10-27T08:34:39+07:00"
+    },
+    {
+      "id": 106202,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 23,
+        "name": "Ready for test"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 271,
+        "name": "Duyet Nguyen Van"
+      },
+      "assigned_to": {
+        "id": 342,
+        "name": "Phuc Nguyen"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6599 MINDEN-3672【エラー】予約が承認された後にキャンセルできないエラーを解決 ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6599 \r\n\r\nLỗi này xuất hiện khác thường xuyên:\r\nhttps://ventura-vn.slack.com/archives/C033U5BK02Z/p1760885621376659\r\n\r\nDự đoán là phía user đang cố làm gì đó nhưng lỗi, k làm được nên thực hiện nhiều lần.\r\nHãy điều tra, report nguyên nhân và fix nhé.",
+      "start_date": "2025-10-20",
+      "due_date": "2025-10-21",
+      "done_ratio": 13,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3672"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6603\r\nhttps://github.com/2zigexn/minden-app/pull/449"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-20T08:10:40+07:00",
+      "updated_on": "2025-10-22T10:22:11+07:00"
+    },
+    {
+      "id": 106160,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 18,
+        "name": "Testing"
+      },
+      "priority": {
+        "id": 4,
+        "name": "Urgent"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 305,
+        "name": "Anh Khoa Dinh "
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6598 MINDEN-3660 exit_shaman_prof_popupの20%オフの再開について：APP  ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6598\r\nhttps://2zigexn.backlog.com/view/MINDEN-3660",
+      "start_date": "2025-10-20",
+      "due_date": "2025-10-24",
+      "done_ratio": 8,
+      "estimated_hours": 1.0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3660"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "App: https://github.com/2zigexn/minden-app/pull/450"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-17T15:17:18+07:00",
+      "updated_on": "2025-10-23T08:20:54+07:00"
+    },
+    {
+      "id": 106052,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 21,
+        "name": "Code Review"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 271,
+        "name": "Duyet Nguyen Van"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6581 CSV download and raw data not reflected due to server memory limit ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6581\r\n\r\nhttps://ventura-vn.slack.com/archives/CAUNXUB33/p1760580307193109?thread_ts=1760578846.765389&cid=CAUNXUB33\r\n\r\n",
+      "due_date": "2025-10-17",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://ventura-vn.slack.com/archives/CAUNXUB33/p1760580307193109?thread_ts=1760578846.765389&cid=CAUNXUB33"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/admin.minden.jp/pull/3806"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-16T11:11:32+07:00",
+      "updated_on": "2025-10-24T09:49:04+07:00"
+    },
+    {
+      "id": 105528,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 17,
+        "name": "JP side"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 402,
+        "name": "Huy Tran Minh"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6555 MINDEN-3655 登録フォームUI改修（MINDEN-3501）停止対応 ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6555\r\n\r\nhttps://2zigexn.backlog.com/view/MINDEN-3655",
+      "start_date": "2025-10-14",
+      "due_date": "2025-10-16",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3655"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6577\r\nhttps://github.com/2zigexn/admin.minden.jp/pull/3804"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-08T14:38:26+07:00",
+      "updated_on": "2025-10-22T16:13:29+07:00"
+    },
+    {
+      "id": 105480,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 6,
+        "name": "Waiting Release"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 325,
+        "name": "Tân Nguyễn Phú"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6552 MINDEN-3547 表示の割引率と実際のクーポン割引率が一致していない  ",
+      "description": "https://2zigexn.backlog.com/view/MINDEN-3547#comment-29014741\r\n\r\nhttps://github.com/2zigexn/sp.minden.jp_v2/issues/6552",
+      "start_date": "2025-10-10",
+      "due_date": "2025-10-14",
+      "done_ratio": 0,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3547#comment-29014741"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "minden-app: https://github.com/2zigexn/minden-app/pull/445\r\nsp.jp_v2: https://github.com/2zigexn/sp.minden.jp_v2/pull/6568"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": ""
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-08T09:08:01+07:00",
+      "updated_on": "2025-10-23T08:07:40+07:00"
+    },
+    {
+      "id": 105187,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 2,
+        "name": "In Progress"
+      },
+      "priority": {
+        "id": 3,
+        "name": "High"
+      },
+      "author": {
+        "id": 267,
+        "name": "Lưu Nguyễn"
+      },
+      "assigned_to": {
+        "id": 318,
+        "name": "Minh Nguyễn Bình"
+      },
+      "fixed_version": {
+        "id": 594,
+        "name": "2025-10"
+      },
+      "subject": "#6521 MINDEN-3638 コンサル事業_clovertel実装：フロント  ",
+      "description": "https://github.com/2zigexn/sp.minden.jp_v2/issues/6521\r\nhttps://2zigexn.backlog.com/view/MINDEN-3638",
+      "start_date": "2025-10-07",
+      "due_date": "2025-10-14",
+      "done_ratio": 3,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": "https://2zigexn.backlog.com/view/MINDEN-3638"
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": "https://github.com/2zigexn/sp.minden.jp_v2/pull/6571"
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": "1"
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-02T16:22:36+07:00",
+      "updated_on": "2025-10-24T15:51:56+07:00"
+    },
+    {
+      "id": 105019,
+      "project": {
+        "id": 92,
+        "name": "MInden"
+      },
+      "tracker": {
+        "id": 12,
+        "name": "User story"
+      },
+      "status": {
+        "id": 1,
+        "name": "New"
+      },
+      "priority": {
+        "id": 2,
+        "name": "Medium"
+      },
+      "author": {
+        "id": 271,
+        "name": "Duyet Nguyen Van"
+      },
+      "assigned_to": {
+        "id": 271,
+        "name": "Duyet Nguyen Van"
+      },
+      "fixed_version": {
+        "id": 519,
+        "name": "Backlog(Internal)"
+      },
+      "subject": "Investment Plan - Oct",
+      "description": "",
+      "start_date": "2025-10-01",
+      "due_date": "2025-10-31",
+      "done_ratio": 7,
+      "custom_fields": [
+        {
+          "id": 13,
+          "name": "STG反映予定日時(Deploy to STG)",
+          "value": ""
+        },
+        {
+          "id": 16,
+          "name": "JP Request",
+          "value": ""
+        },
+        {
+          "id": 18,
+          "name": "PR",
+          "value": ""
+        },
+        {
+          "id": 30,
+          "name": "Difficulty Level",
+          "value": ""
+        },
+        {
+          "id": 37,
+          "name": "Confirmed Release",
+          "value": "1"
+        },
+        {
+          "id": 40,
+          "name": "VN suggestion",
+          "value": "0"
+        }
+      ],
+      "created_on": "2025-10-01T10:05:46+07:00",
+      "updated_on": "2025-10-22T22:44:22+07:00"
+    }
+  ],
+  "total_count": 15,
+  "offset": 0,
+  "limit": 25
+}
