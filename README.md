@@ -1,41 +1,10 @@
-# Slack Collect Message Bot
+# Sample Prompt AI Cursor
 
-A Rails application that collects error messages from Slack channels and provides a dashboard for monitoring, tracking, and managing system errors - similar to GCP Error Reporting.
+Dự án Rails demo về cách sử dụng prompt trong Cursor AI để phát triển ứng dụng.
 
-## Purpose
+## Mục đích
 
-This tool addresses the problem of error messages scattered across Slack channels by:
-
-- **Collecting** error messages from designated Slack channels daily
-- **Analyzing** and categorizing similar error types
-- **Tracking** occurrence frequency, timestamps, and error patterns
-- **Providing** a centralized dashboard for error management
-- **Enabling** team collaboration through status management (resolve, mute, acknowledge)
-
-## Features
-
-### 🔍 Error Collection
-- Automatically collects error messages from configured Slack channels
-- Daily scheduled collection with configurable intervals
-- Smart parsing and categorization of error types
-
-### 📊 Dashboard & Analytics
-- Visual dashboard showing error occurrence frequency
-- Time-based error tracking and trends
-- Error grouping by similarity and type
-- Statistical insights and reporting
-
-### 🎯 Error Management
-- **Resolve**: Mark errors as fixed
-- **Mute**: Temporarily silence recurring known errors  
-- **Acknowledge**: Confirm awareness of critical errors
-- Team collaboration and assignment features
-
-### 📈 Monitoring
-- Real-time error frequency monitoring
-- Alert system for critical error thresholds
-- Historical data and trend analysis
-- Export capabilities for reporting
+Đây là dự án mới tinh được tạo ra để minh họa cách làm việc hiệu quả với Cursor AI thông qua các prompt cụ thể. Dự án tập trung vào việc tích hợp với Redmine API để fetch và lưu trữ dữ liệu User Story và Project.
 
 ## Technology Stack
 
@@ -43,175 +12,236 @@ This tool addresses the problem of error messages scattered across Slack channel
 - **Database**: MySQL 8.0
 - **Frontend**: Hotwire (Turbo + Stimulus)
 - **Deployment**: Docker, Kamal
-- **CI/CD**: GitHub Actions
+- **Configuration**: Config gem (quản lý settings)
 - **Code Quality**: RuboCop, Brakeman
 
-## Quick Start
+## Cấu trúc Docker
 
-### Using Docker (Recommended for Development)
+Dự án chạy hoàn toàn trong Docker containers. **TUYỆT ĐỐI KHÔNG** chạy các lệnh Rails, Ruby, Bundle, Database trực tiếp trên host machine.
 
-1. **Initial Setup**:
+### Services
+
+- **web**: Rails application (port 3000)
+- **db**: MySQL 8.0 database (development)
+- **test_db**: MySQL 8.0 database (test)
+
+### Quick Start
+
+1. **Tạo file `.env` từ mẫu**:
    ```bash
-   ./docker-dev.sh setup
+   cp env.example .env
+   # Chỉnh sửa .env nếu cần
    ```
 
-2. **Start Application**:
+2. **Khởi động containers**:
    ```bash
-   ./docker-dev.sh up
-   ```
-   
-   Access at: http://localhost:3000
-
-3. **Stop Application**:
-   ```bash
-   ./docker-dev.sh down
+   docker compose up -d
    ```
 
-### Available Commands
-
-- `./docker-dev.sh setup` - Initial setup (build, create and migrate database)
-- `./docker-dev.sh up` - Start the development environment
-- `./docker-dev.sh down` - Stop the development environment
-- `./docker-dev.sh logs` - Show web container logs
-- `./docker-dev.sh rails <command>` - Run rails commands
-- `./docker-dev.sh bash` - Open bash shell in web container
-- `./docker-dev.sh test` - Run test suite
-- `./docker-dev.sh clean` - Clean up containers and volumes
-
-### Local Development (Without Docker)
-
-1. **Prerequisites**:
-   - Ruby 3.4.2
-   - MySQL 8.0
-   - Node.js
-
-2. **Setup**:
+3. **Setup database**:
    ```bash
-   bundle install
-   rails db:create db:migrate
-   rails server
+   docker compose exec web rails db:create
+   docker compose exec web rails db:migrate
    ```
+
+4. **Truy cập ứng dụng**: http://localhost:3000
+
+### Các lệnh thường dùng
+
+Xem chi tiết trong file [DOCKER_DEVELOPMENT.md](DOCKER_DEVELOPMENT.md) hoặc `.cursor/rules/docker.mdc`
+
+```bash
+# Bundle install
+docker compose exec web bundle install
+
+# Rails console
+docker compose exec web rails console
+
+# Chạy migrations
+docker compose exec web rails db:migrate
+
+# Chạy tests
+docker compose exec web rails test
+
+# Xem logs
+docker compose logs -f web
+```
+
+## Demo Tasks
+
+### Task 1: Fetch User Stories từ Redmine
+
+**Mục tiêu**: Fetch các data của User Story từ Redmine về thông qua API. **Chỉ cần fetch thành công, chưa cần lưu vào DB.**
+
+**Các field cần fetch**:
+- `redmine_id` - ID của issue trong Redmine
+- `subject` - Tiêu đề của User Story
+- `jp_request` - Mô tả yêu cầu (tiếng Nhật)
+- `start_date` - Ngày bắt đầu
+- `due_date` - Ngày kết thúc
+- `assignee` - Người được giao
+- `estimate` - Thời gian ước tính
+- `spent_time` - Thời gian đã sử dụng
+- `difficult_level` - Mức độ khó
+
+**Yêu cầu**:
+- Tạo service/class để tích hợp với Redmine API
+- Fetch theo từng team chỉ định, không fetch toàn bộ
+- Fetch trong khoảng thời gian chỉ định
+- Nếu không chỉ định thời gian cụ thể thì lấy `created_at` từ **1 tháng trước** tới **hiện tại**
+- In ra hoặc log data để verify fetch thành công
+
+### Task 2: Lưu User Stories vào Database
+
+**Mục tiêu**: Sử dụng service đã tạo ở Task 1, fetch User Stories từ các project được chỉ định và **lưu vào database**.
+
+**Các project cần fetch**:
+
+1. **Minden**
+   - Project identifier: `minden2`
+
+2. **Kuruma**
+   - Project identifier: `usedcar-ex`
+   - **Bỏ qua các sub project**
+
+**Yêu cầu**:
+- Tạo model `UserStory` với migration cho các field đã liệt kê ở Task 1
+- Tạo model `Project` để lưu thông tin project (nếu cần)
+- Fetch User Stories từ các project được chỉ định
+- Nếu có chỉ định `start_time`, `end_time` thì fetch trong khoảng thời gian đó
+- Nếu không thì fetch trong khoảng thời gian **1 tháng từ trước tới giờ**
+- Lưu data vào database với xử lý duplicate (theo `redmine_id`)
 
 ## Configuration
 
 ### Environment Variables
 
-- `SLACK_BOT_TOKEN` - Slack bot authentication token
-- `SLACK_CHANNELS` - Comma-separated list of channel IDs to monitor
-- `DATABASE_URL` - Database connection string
-- `COLLECTION_SCHEDULE` - Cron expression for message collection (default: daily)
+File `.env` chứa các biến môi trường cần thiết:
 
-### Slack Integration
+```bash
+# Database Configuration
+DB_HOST=db
+DB_USER=rails_user
+DB_PASSWORD=password
+MYSQL_ROOT_PASSWORD=password
+MYSQL_DATABASE=sample_prompt_ai_cursor_development
 
-1. Create a Slack app at https://api.slack.com/apps
-2. Add bot token scopes: `channels:read`, `channels:history`, `chat:read`
-3. Install the app to your workspace
-4. Configure the bot token in your environment
+# Rails Configuration
+RAILS_ENV=development
+RAILS_MAX_THREADS=5
 
-## Architecture
+# Redmine API Configuration (cần thêm)
+REDMINE_URL=https://your-redmine-instance.com
+REDMINE_API_KEY=your_api_key_here
+```
+
+### Config Gem
+
+Dự án sử dụng gem `config` để quản lý settings:
+
+- File cấu hình: `config/settings.yml` và `config/settings/{environment}.yml`
+- Initializer: `config/initializers/config.rb`
+- Biến môi trường với prefix `SETTINGS_*` sẽ tự động được load
+
+Ví dụ:
+```bash
+SETTINGS_REDMINE_URL=https://redmine.example.com
+SETTINGS_API_KEY=your_key
+```
+
+Sử dụng trong code:
+```ruby
+Settings.redmine_url
+Settings.api_key
+```
+
+## Cấu trúc Project
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Slack API     │───▶│  Message        │───▶│   Dashboard     │
-│   Integration   │    │  Collector      │    │   & Analytics   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                              │
-                              ▼
-                       ┌─────────────────┐
-                       │   Error         │
-                       │   Categorizer   │
-                       └─────────────────┘
-                              │
-                              ▼
-                       ┌─────────────────┐
-                       │   Database      │
-                       │   (MySQL)       │
-                       └─────────────────┘
+app/
+├── controllers/        # Controllers
+├── models/           # Models (UserStory, Project, ...)
+├── jobs/             # Background jobs cho fetch data
+└── views/            # Views
+
+config/
+├── settings.yml       # Settings mặc định
+├── settings/          # Settings theo environment
+│   ├── development.yml
+│   ├── production.yml
+│   └── test.yml
+└── initializers/
+    └── config.rb     # Config gem setup
+
+db/
+├── migrate/          # Database migrations
+└── seeds.rb          # Seed data
 ```
 
 ## Development
 
-### Running Tests
+### Thêm gem mới
+
+1. Thêm vào `Gemfile`
+2. Chạy: `docker compose exec web bundle install`
+3. Restart container nếu cần: `docker compose restart web`
+
+### Tạo migration
 
 ```bash
-# Using Docker
-./docker-dev.sh test
+docker compose exec web rails generate migration CreateUserStories
+docker compose exec web rails db:migrate
+```
 
-# Local
-rails test
-rails test:system
+### Chạy tests
+
+```bash
+docker compose exec web rails test
+docker compose exec web rails test:system
 ```
 
 ### Code Quality
 
 ```bash
-# Linting
-bin/rubocop
+# RuboCop
+docker compose exec web rubocop
+docker compose exec web rubocop -a  # auto-correct
 
-# Security scanning
-bin/brakeman
-
-# JavaScript dependencies audit
-bin/importmap audit
+# Brakeman (security)
+docker compose exec web brakeman
 ```
 
-### Database
+## Redmine API Integration
 
-The application uses MySQL 8.0 with the following main entities:
+### Authentication
 
-- **Messages**: Raw collected Slack messages
-- **ErrorTypes**: Categorized error patterns
-- **ErrorOccurrences**: Individual error instances
-- **ErrorStatuses**: Management status (resolved, muted, acknowledged)
-
-## Deployment
-
-### Production with Kamal
-
-1. Configure `config/deploy.yml`
-2. Deploy:
-   ```bash
-   kamal setup
-   kamal deploy
-   ```
-
-### Docker Production
+Redmine API sử dụng API key authentication. Thêm vào `.env`:
 
 ```bash
-docker build -t slack-collect-msg .
-docker run -d -p 80:80 -e RAILS_MASTER_KEY=<key> slack-collect-msg
+REDMINE_URL=https://your-redmine.com
+REDMINE_API_KEY=your_api_key_here
 ```
 
-## Contributing
+### API Endpoints cần sử dụng
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Run tests and ensure code quality checks pass
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
+- **User Stories (Issues)**: `/issues.json`
+- **Projects**: `/projects.json`
+- **Project Issues**: `/projects/{identifier}/issues.json`
 
-## CI/CD
+### Filter Parameters
 
-The project uses GitHub Actions for:
+- `created_on`: Filter theo ngày tạo
+- `project_id`: Filter theo project
+- `tracker_id`: Filter theo tracker (User Story)
+- `status_id`: Filter theo status
 
-- **Security Scanning**: Brakeman for Ruby, importmap audit for JavaScript
-- **Code Quality**: RuboCop linting
-- **Testing**: Automated test suite with MySQL
-- **Deployment**: Automated deployment on successful builds
+## Notes
+
+- File `.env` đã được gitignore, không commit vào git
+- File `env.example` có thể commit để làm mẫu
+- Tất cả lệnh Rails phải chạy trong Docker container
+- Database data được persist trong Docker volumes
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-For questions, issues, or contributions, please:
-
-1. Check existing [Issues](../../issues)
-2. Create a new issue with detailed information
-3. Join our development discussions
-
----
-
-**Note**: This tool is designed to complement, not replace, dedicated error monitoring services. It's particularly useful for teams heavily reliant on Slack for system alerts and error notifications.
+MIT License
