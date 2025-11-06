@@ -1,0 +1,12 @@
+redmine:
+  url: "https://dev.zigexn.vn"
+  api_key: "cfd5114fdb5b6ff9a403844bf74d8935be2132dd"
+  basic_auth:
+    username: "zigexn"
+    password: "Dqb2o78995lq"
+  tracker_id: 12  # User story tracker
+  projects:
+    - "minden2"
+    - "usedcar-ex"
+  page_size: 100
+
