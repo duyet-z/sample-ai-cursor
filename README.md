@@ -140,6 +140,39 @@ docker compose logs -f web
 - Sử dụng service từ Task 1 để fetch User Stories từ 2 projects trên
 - Lưu data vào database với xử lý duplicate (theo `redmine_id`)
 
+---
+
+### Task 3: Chuẩn hóa Database
+
+**Mục tiêu**: Chuẩn hóa database để các thông tin như `assignee`, `author`, `status`, `priority` không lưu dạng text mà được tách ra thành các bảng riêng biệt.
+
+**Yêu cầu**:
+- Hiện tại `assignee` đang lưu dạng text trong bảng `UserStory`
+- Cần tạo bảng `RedmineUser` để lưu thông tin user và reference từ `UserStory`
+- Tương tự cho `status`, `priority`, `author` (author cũng là user)
+- Xử lý duplicate dựa trên `redmine_id` từ API
+
+**Lợi ích**: Dễ dàng query, filter và tránh duplicate data.
+
+---
+
+### Task 4: Gantt Chart cho Projects
+
+**Mục tiêu**: Xây dựng Gantt chart để visualize timeline của các User Stories theo từng project.
+
+**Yêu cầu**:
+- Hiển thị Gantt chart cho mỗi project (Minden, Kuruma)
+- Chart hiển thị timeline của các User Stories dựa trên `start_date` và `due_date`
+- Sử dụng Bootstrap cho UI layout
+- Sử dụng Chart.js hoặc Highcharts cho việc render chart
+- Chart cần hiển thị: tên User Story, thời gian, assignee, status
+- Hỗ trợ filter theo assignee, status, hoặc time range
+
+**Deliverables**:
+- Trang web hiển thị danh sách projects
+- Trang chi tiết project với Gantt chart
+- Interactive chart (hover, click để xem chi tiết)
+
 ## Configuration
 
 ### Environment Variables
@@ -266,7 +299,7 @@ REDMINE_API_KEY=your_api_key_here
 ## Notes
 
 - File `.env` đã được gitignore, không commit vào git
-- File `env.example` có thể commit để làm mẫu
+- File `.env.example` có thể commit để làm mẫu
 - Tất cả lệnh Rails phải chạy trong Docker container
 - Database data được persist trong Docker volumes
 
