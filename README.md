@@ -69,6 +69,35 @@ docker compose logs -f web
 
 ## Demo Tasks
 
+### Feature: Tích hợp Redmine API và lưu User Stories vào Database
+
+**Mục tiêu**: Tích hợp với Redmine API để fetch User Stories từ các project được chỉ định (Minden và Kuruma) và lưu vào database.
+
+**Các field cần lưu**:
+- `redmine_id` - ID của issue trong Redmine
+- `subject` - Tiêu đề của User Story
+- `jp_request` - Mô tả yêu cầu (tiếng Nhật)
+- `start_date` - Ngày bắt đầu
+- `due_date` - Ngày kết thúc
+- `assignee` - Người được giao
+- `estimate` - Thời gian ước tính
+- `spent_time` - Thời gian đã sử dụng
+- `difficult_level` - Mức độ khó
+
+**Yêu cầu chức năng**:
+- Fetch User Stories từ 2 projects: Minden (`minden2`) và Kuruma (`usedcar-ex`)
+- Hỗ trợ chỉ định khoảng thời gian (`start_time`, `end_time`)
+- Mặc định fetch trong khoảng 1 tháng từ trước tới giờ
+- Lưu vào database với xử lý duplicate (theo `redmine_id`)
+- Bỏ qua sub-projects của Kuruma
+
+**Task Breakdown**:
+Để giảm độ phức tạp, feature này được chia thành 2 tasks nhỏ hơn:
+- **Task 1**: Focus vào API integration và data fetching (không lưu DB)
+- **Task 2**: Focus vào database schema và data persistence (sử dụng service từ Task 1)
+
+---
+
 ### Task 1: Fetch User Stories từ Redmine
 
 **Mục tiêu**: Fetch các data của User Story từ Redmine về thông qua API. **Chỉ cần fetch thành công, chưa cần lưu vào DB.**
