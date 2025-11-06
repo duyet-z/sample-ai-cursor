@@ -86,8 +86,9 @@ docker compose logs -f web
 
 **Yêu cầu**:
 - Tạo service/class để tích hợp với Redmine API
+- Service hỗ trợ fetch User Stories từ các project được chỉ định
 - Fetch theo từng team chỉ định, không fetch toàn bộ
-- Fetch trong khoảng thời gian chỉ định
+- Hỗ trợ chỉ định khoảng thời gian (`start_time`, `end_time`)
 - Nếu không chỉ định thời gian cụ thể thì lấy `created_at` từ **1 tháng trước** tới **hiện tại**
 - In ra hoặc log data để verify fetch thành công
 
@@ -107,9 +108,7 @@ docker compose logs -f web
 **Yêu cầu**:
 - Tạo model `UserStory` với migration cho các field đã liệt kê ở Task 1
 - Tạo model `Project` để lưu thông tin project (nếu cần)
-- Fetch User Stories từ các project được chỉ định
-- Nếu có chỉ định `start_time`, `end_time` thì fetch trong khoảng thời gian đó
-- Nếu không thì fetch trong khoảng thời gian **1 tháng từ trước tới giờ**
+- Sử dụng service từ Task 1 để fetch User Stories từ 2 projects trên
 - Lưu data vào database với xử lý duplicate (theo `redmine_id`)
 
 ## Configuration
