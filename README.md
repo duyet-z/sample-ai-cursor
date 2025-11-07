@@ -135,6 +135,8 @@ docker compose logs -f web
 **Yêu cầu**:
 - Sử dụng service từ Task 1 để fetch User Stories từ 2 projects trên
 - Lưu data vào database với xử lý duplicate (theo `redmine_id`)
+- Hỗ trợ chỉ định khoảng thời gian (start_time, end_time)
+- Mặc định fetch trong khoảng 1 tháng từ trước tới giờ
 
 ---
 
