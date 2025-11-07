@@ -33,6 +33,11 @@ services:
       DB_USER: ${DB_USER:-rails_user}
       DB_PASSWORD: ${DB_PASSWORD:-password}
       RAILS_MAX_THREADS: ${RAILS_MAX_THREADS:-5}
+      # Redmine API Configuration
+      REDMINE_URL: ${REDMINE_URL:-https://dev.zigexn.vn}
+      REDMINE_API_KEY: ${REDMINE_API_KEY}
+      REDMINE_BASIC_AUTH_USERNAME: ${REDMINE_BASIC_AUTH_USERNAME}
+      REDMINE_BASIC_AUTH_PASSWORD: ${REDMINE_BASIC_AUTH_PASSWORD}
     stdin_open: true
     tty: true
 
