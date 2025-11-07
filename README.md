@@ -135,8 +135,6 @@ docker compose logs -f web
    - **Bỏ qua các sub project**
 
 **Yêu cầu**:
-- Tạo model `UserStory` với migration cho các field đã liệt kê ở Task 1
-- Tạo model `Project` để lưu thông tin project (nếu cần)
 - Sử dụng service từ Task 1 để fetch User Stories từ 2 projects trên
 - Lưu data vào database với xử lý duplicate (theo `redmine_id`)
 
