@@ -117,8 +117,6 @@ docker compose logs -f web
 - Tạo service/class để tích hợp với Redmine API
 - Service hỗ trợ fetch User Stories từ các project được chỉ định
 - Fetch theo từng team chỉ định, không fetch toàn bộ
-- Hỗ trợ chỉ định khoảng thời gian (`start_time`, `end_time`)
-- Nếu không chỉ định thời gian cụ thể thì lấy `created_at` từ **1 tháng trước** tới **hiện tại**
 - In ra hoặc log data để verify fetch thành công
 
 ### Task 2: Lưu User Stories vào Database
