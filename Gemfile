@@ -20,6 +20,9 @@ gem "jbuilder"
 # Configuration management for Rails applications [https://github.com/rubyconfig/config]
 gem "config"
 
+# HTTP client library [https://lostisland.github.io/faraday/]
+gem "faraday"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -57,6 +60,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Load environment variables from .env file [https://github.com/bkeepers/dotenv]
+  gem "dotenv-rails"
 end
 
 group :test do

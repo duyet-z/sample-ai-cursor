@@ -1,0 +1,7 @@
+redmine:
+  url: <%= ENV.fetch('REDMINE_URL', 'https://test.example.com') %>
+  api_key: <%= ENV.fetch('REDMINE_API_KEY', 'test_api_key') %>
+  basic_auth:
+    username: <%= ENV.fetch('REDMINE_BASIC_AUTH_USERNAME', 'test_user') %>
+    password: <%= ENV.fetch('REDMINE_BASIC_AUTH_PASSWORD', 'test_password') %>
+
